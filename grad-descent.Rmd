@@ -1,6 +1,6 @@
 ---
 title: "Gradient Descent"
-output: html_notebook
+output: pdf_document 
 ---
 
 This notebook will illustrate gradient descent. 
