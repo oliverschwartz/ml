@@ -1,6 +1,9 @@
 ---
 title: "Decision Trees"
-output: pdf_document 
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
 ---
 
 ```{r include=FALSE}
@@ -143,8 +146,8 @@ for (j in 1:2) {
     
     left_total = lpos + lneg
     right_total = rpos + rneg
-    gini_left = 1 - (lneg / left_total)^2 * (lpos / left_total)^2
-    gini_right = 1 - (rneg / right_total)^2 * (rpos / right_total)^2
+    gini_left = 1 - ((lneg / left_total)^2 + (lpos / left_total)^2)
+    gini_right = 1 - ((rneg / right_total)^2 + (rpos / right_total)^2)
     gini = gini_left * (left_total / NUM_SAMPLES) + gini_right * (right_total / NUM_SAMPLES)
     
     # See if this split performs better than anything seen so far. 
